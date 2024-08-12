@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Apex Legends website</title>
+  <!-- 引入网页图标 -->
+  <link rel="icon" href="./favicon.ico">
+  <!-- 引入全局样式 -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <!-- 引入首页的样式 -->
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<script>
+  window.onload = function() {
+      //针对不同屏幕缩放
+  function scale() {
+    var bodyW = document.body.clientWidth
+    var zoom = bodyW / 1920
+    var ele = document.querySelector('body')
+    var i
+    ele.style.transform = 'scale(' + zoom + ')'
+
+  }
+  window.addEventListener('resize', () => {
+    scale()
+  })
+  }
+
+</script>
+
+</html>
