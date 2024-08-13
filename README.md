@@ -1,5 +1,5 @@
 # apex
-
+The simple web page about "Apex" mimics APEX's official website
 ## Project setup
 ```
 npm install
