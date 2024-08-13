@@ -1,0 +1,699 @@
+/* 头部样式开始 */
+/* body{
+    max-width: 1700px;
+    width:auto;
+    height:auto;
+    position: relative;
+    display:flex;
+    justify-content:center;
+} */
+
+/*width: 1450px;最好*/
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    height: 55px;
+    background-color: dimgray;
+    font-size: 12px;
+    /* 行高等于高 一行文字垂直居中  行高具有继承性 */
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    color: lightsalmon
+}
+
+.header span {
+    font-size: 50px;
+    position: center;
+}
+
+.header-left {
+    float: left;
+    width: 200px;
+    height: 54px;
+    background-color: #cf1132;
+    color: #fff;
+}
+
+.fr {
+    margin-right: 40px;
+}
+
+/* 头部样式结束 */
+/* 导航样式开始 */
+
+.nav {
+
+    z-index: 999;
+    position: relative;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    /* 背景图片不平铺  位置我是水平居中垂直居上 */
+    background: url("../images/nav_back_bg_fd2505e.jpg") no-repeat center top;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    z-index: 999;
+    padding: 0;
+    position: relative;
+    float: left;
+    width: 100px;
+    flex: 1;
+    height: 70px;
+}
+
+.nav ul li {
+    z-index: 999;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* 水平居中的容器  不设置高度 高度由内容撑开 因为整个页面水平居中使用同一个class */
+.wrap {
+    width: 1000px;
+    margin: 0 auto;
+    letter-spacing: auto;
+    color: #fff;
+}
+
+.nav span {
+    font-size: 12px;
+    margin-left: 8px;
+
+}
+
+
+.nav .fr {
+    color: #ffffff;
+    height: 45px;
+    line-height: 60px;
+}
+
+.fr a {
+    color: #ffffff;
+}
+
+
+@media screen and (max-width: 600px) {
+    .nav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+
+.nav li:hover>a {
+    color: #000;
+}
+
+.active {
+    background-color: #cf1132;
+    width: auto;
+}
+
+.active>a {
+    color: white;
+}
+
+.active span {
+    color: #cf1132;
+}
+
+
+/* 下拉列表 */
+/* 
+核心思路：
+1）下拉列表绝对定位
+2）合适的父元素相对定位
+3）下拉列表display:none;隐藏
+4）鼠标悬停时下拉列表display:block;显示
+*/
+.nav-list {
+    z-index: 9999;
+    /* 隐藏 */
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 30%;
+    height: 140px;
+
+}
+
+.nav li:hover>.nav-list {
+    /* 显示 */
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.nav ul li:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #000;
+}
+
+.nav ul li:hover .dropdown-menu ul {
+    display: block;
+    margin: 10px;
+
+}
+
+/* 导航样式结束 */
+/* banner样式开始 */
+
+.banner {
+    top: 80px;
+    position: relative;
+    width: 100%;
+    height: 760px;
+    overflow: hidden;
+    background-image: url("../images/APEX11111.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.banner>img {
+    /* 子元素在父元素中水平居中 */
+
+    position: relative;
+    left: 50%;
+    margin-left: -800px;
+    max-width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+
+
+}
+
+/* banner样式结束 */
+/* 主体样式开始 */
+
+.container {
+    position: relative;
+    top: -10px;
+    width: 100%;
+    height: 760px;
+    overflow: hidden;
+    background-image: url(../images/center.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c1 {
+    width: 100%;
+    height: 150px;
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+
+}
+
+.c2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: crimson;
+}
+
+.flex-container {
+    display: flex;
+    height: 300px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 1px;
+    box-sizing: border-box;
+
+}
+
+.flex-item {
+
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+
+    box-sizing: border-box;
+
+
+}
+
+.item1 {
+    order: 1;
+    flex: 1;
+    align-self: stretch;
+    background-image: url("../images/news.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+
+
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.item2 {
+    order: 1;
+    flex: 1;
+    align-self: stretch;
+    background-image: url("../images/news2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10px;
+    box-sizing: border-box;
+
+
+}
+
+.item3 {
+    order: 1;
+    flex: 1;
+    align-self: stretch;
+    background-image: url("../images/new3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.flex-container1 {
+    display: flex;
+    margin-top: -19.9px;
+    height: 450px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 3px;
+    line-height: 30px;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 1px;
+    box-sizing: border-box;
+    height: 500px;
+
+}
+
+.flex-container1 img {
+    max-width: 50%;
+    /* 设置图片的最大宽度为容器宽度的50% */
+    object-fit: contain;
+    /* 让图片等比例缩放以适应容器 */
+}
+
+.flex-container1 span {
+    color: #cf1132;
+    font-family: fantasy;
+
+}
+
+.flex-container1 p {
+    font-family: "Lucida Handwriting", cursive;
+}
+
+.item4 {
+
+    flex: 1;
+    align-self: stretch;
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 1vw;
+
+
+}
+
+.item5 {
+
+    flex: 1;
+    align-self: stretch;
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 1vw;
+}
+
+.item6 {
+
+    flex: 1;
+    align-self: stretch;
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 1vw;
+}
+
+.item7 {
+    background-image: url("images/season.jpg");
+    background-position: center center;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    width: 100%;
+    align-self: stretch;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    top:100px;
+}
+
+
+
+
+
+
+
+
+
+
+/* 注册样式 */
+.register-con {
+    background: url(../images/zuce.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 250px 0;
+    margin-top: -5px;
+    width:1630px;
+    backdrop-filter: blur(50px);
+
+}
+
+.register-con .register-neirong {
+    width: 610px;
+    height: auto;
+    margin: 0 auto;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 40px 35px 50px 35px;
+    margin: 0 auto;
+    border-radius: 5px;
+
+
+}
+
+.register-con .register-neirong .register-h3 {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #999999;
+}
+
+.register-con .register-neirong .register-h3 span {
+    display: block;
+    width: 175px;
+    border-bottom: 2px solid #333333;
+    font-size: 24px;
+    color: #333;
+}
+
+.register-con .register-neirong form .shoujihao {
+    width: 100%;
+    height: 50px;
+    line-height: 40px;
+    margin-top: 38px;
+    color: #808080;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.register-con .register-neirong form .shoujihao .fr {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 440px;
+    height: 40px;
+    border: 1px solid #cccccc;
+    padding-left: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 14px;
+    color: #808080;
+}
+
+/* 登录样式 */
+.zhuce {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    position: relative;
+    top: 50px;
+}
+
+/*版权所有*/
+.footer {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 14px;
+    color: #fff;
+    background: #333;
+    position: bottom;
+}
+
+.footer a {
+    float: right;
+    font-size: 50px;
+    color: #cf1132;
+}
+
+.tc {
+    text-align: center !important;
+    color: #808080;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.last {
+
+    margin-top: 0;
+    display: flex;
+    height: 800px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 3px;
+    line-height: 50px;
+    background-image: url("../images/zuihou.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+
+
+
+}
+
+.last p {
+    font-size: 50px;
+    top: -200px;
+    position: relative;
+}
+
+.last1 {
+    top: 0;
+    position: absolute;
+    z-index: 1;
+
+
+}
+
+/*底部图片*/
+.grid-container {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 60px;
+    height: 1000px;
+}
+
+.grid-item1 {
+    height: 450px;
+    background-image: url("../images/底部1.webp");
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+.grid-item2 {
+    height: 450px;
+    background-image: url("../images/底部2.webp");
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+.grid-item3 {
+    height: 450px;
+    background-image: url("../images/底部3.webp");
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+.grid-item4 {
+    height: 450px;
+    background-image: url("../images/底部4.webp");
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    font-size: 30px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+.grid-item5 {
+    height: 450px;
+    background-image: url("../images/底部5.webp");
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+.grid-item6 {
+    background-image: url("../images/底部6.webp");
+    height: 450px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*首页底部图片结束*/
+/*SEASON界面开始*/
+.flex-container2 {
+    display: flex;
+    margin-top: -19.9px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 3px;
+    line-height: 30px;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 0;
+    box-sizing: border-box;
+    height: 4000px;
+    width: 100%;
+  
+}
+.flex-containerseason{
+    display: flex;
+    margin-top: -19.9px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 3px;
+    line-height: 30px;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 0;
+    box-sizing: border-box;
+    height: 4500px;
+    width: 100%;
+}
+
+.item7 img {
+    height: 300px;
+    position: relative;
+    margin-top: 150px;
+    object-fit: cover;
+}
+
+.item11 img {
+    height: 500px;
+    position: relative;
+    margin-top: -35px;
+    object-fit: contain;
+}
